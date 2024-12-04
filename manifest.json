@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Utar WBLE Extension",
+  "version": "1.0",
+  "description": "A lightweight extension for multiple downloads of PDF files on the target page with one click. Developed by Juinnlau",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "./assets/logo.png",
+      "48": "./assets/logo.png",
+      "128": "./assets/logo.png"
+    }
+  },
+  "content_security_policy": {
+    "script-src": ["'self'", "https://cdn.jsdelivr.net"],
+    "style-src": ["'self'", "https://cdn.jsdelivr.net"]
+  }
+}
